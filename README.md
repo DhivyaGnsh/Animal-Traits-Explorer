@@ -28,4 +28,19 @@ The type column serves as the classification or grouping of the animal.
 Observations:
 All columns are fully populated with no missing values.
 The data appears to use byte-string formatting (e.g., b'true'). This may require decoding or cleaning for easier analysis.
-Would you like me to clean this da
+
+
+Code to find the average number of legs for animals that are both aquatic and have fins
+aquatic_fins = zoo_data[(zoo_data['aquatic'] == b'true') & (zoo_data['fins'] == b'true')]
+average_legs = aquatic_fins['legs'].mean()
+average_legs
+
+ code to find the correlation between animals being venomous and tooth
+
+zoo_data['venomous_num'] = (zoo_data['venomous'] == b'true').astype(int)
+zoo_data['toothed_num'] = (zoo_data['toothed'] == b'true').astype(int)
+correlation = zoo_data['venomous_num'].corr(zoo_data['toothed_num'])
+correlation
+
+ 
+
